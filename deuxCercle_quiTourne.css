@@ -1,0 +1,36 @@
+body{
+    background: radial-gradient(circle at bottom, #9fb8d1 0%, #0c1753 100%);
+    /* vh 100 prend 100% de la hauteur */
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+circle{
+    /* intérieur invisible */
+    fill: none;
+    stroke: #fff;
+    stroke-width: 10px;
+    /* 100px de contour plein, 100px de contour vide */
+    stroke-dasharray: 100 100;
+    /* je le décalle de 70 */
+    stroke-dashoffset: 70;
+    animation: rotation 2s ease-in-out alternate infinite;
+}
+svg{
+    transform: translateX(-50px);
+    filter: drop-shadow(100px 0 #00ccff);
+}
+
+@keyframes rotation {
+    0%{
+        stroke-dasharray: 100 100;
+        stroke-dashoffset: 70;
+    }
+    100%{
+        stroke-dasharray: 20 20;
+        stroke-dashoffset: -600;
+    }
+}
